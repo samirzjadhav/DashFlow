@@ -10,9 +10,11 @@ function HomePage() {
   const { user, loading, error } = useUser();
 
   if (loading) return <p className="loading">Loading User...</p>;
+
   if (error) {
     return <UserErrorMessage />;
   }
+
   if (!user) return <p>No User Data</p>;
 
   return (

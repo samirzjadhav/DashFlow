@@ -26,9 +26,11 @@ function SettingsPage() {
   };
 
   if (loading) return <p className="loading">Loading user...</p>;
+
   if (error) {
     return <UserErrorMessage />;
   }
+
   if (!user) return <p>No user data</p>;
 
   return (

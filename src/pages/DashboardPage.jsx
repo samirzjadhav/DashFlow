@@ -26,7 +26,9 @@ function DashboardPage() {
         <p className="muted">Role: {user.role}</p>
         <p className="muted">Member since: {user.joinedAt}</p>
       </div>
+
       <h3>Your Stats</h3>
+
       <div className="stats-grid">
         <div className="stat-card">
           📁 Projects
