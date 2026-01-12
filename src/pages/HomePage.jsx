@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchCurrentUser } from "../api/user";
 import { useUser } from "../context/UserContext";
+import UserErrorMessage from "../components/UserErrorMessage";
 
 // PROBLEM: This page fetches user data independently
 // TODO: Refactor to use the shared UserContext instead
@@ -9,8 +10,11 @@ function HomePage() {
   const { user, loading, error } = useUser();
 
   if (loading) return <p className="loading">Loading User...</p>;
-  if (error) return <p>{error}</p>;
+  if (error) {
+    return <UserErrorMessage />;
+  }
   if (!user) return <p>No User Data</p>;
+
   return (
     <div className="page">
       <h1>Welcome Home</h1>

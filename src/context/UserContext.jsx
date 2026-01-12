@@ -52,11 +52,6 @@ export function UserProvider({ children }) {
     setUser(updatedUser);
   };
 
-  // this is for error boundary integration
-  if (!loading && error) {
-    throw new Error(error);
-  }
-
   return (
     <UserContext.Provider
       value={{
